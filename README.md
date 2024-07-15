@@ -57,17 +57,10 @@
           Fügen Sie die folgenden Tabellen zu Ihrer Supabase-Datenbank hinzu:
         </p>
         <p>
-          <code>
-            CREATE TABLE users ( id SERIAL PRIMARY KEY, name VARCHAR(255) NOT
-            NULL);
-          </code>
+          <code>CREATE TABLE users ( id SERIAL PRIMARY KEY, name VARCHAR(255) NOT NULL);</code>
         </p>
         <p>
-          <code>
-            CREATE TABLE messages ( id SERIAL PRIMARY KEY, text TEXT NOT NULL,
-            user_id INTEGER NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
-            username VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT NOW());
-          </code>
+          <code>CREATE TABLE messages ( id SERIAL PRIMARY KEY, text TEXT NOT NULL, user_id INTEGER NOT NULL REFERENCES users (id) ON DELETE RESTRICT, username VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT NOW());</code>
         </p>
       </li>
     </ul>
