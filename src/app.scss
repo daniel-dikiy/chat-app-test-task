@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply p-0;
+}
+
+img {
+  @apply pointer-events-none h-8 w-8 select-none object-contain;
+}
+
+input:focus {
+  @apply outline-none;
+}
+
+body {
+  @apply bg-gradient-to-br from-slate-50 to-slate-200;
+}
+
+main {
+  @apply mx-auto h-[90%] w-full max-w-7xl;
+
+  h1 {
+    @apply text-center;
+  }
+}
+
+header {
+  @apply m-1 flex h-16 justify-between;
+}
+
+.app {
+  @apply flex h-screen flex-col;
+}
+
+.corner {
+  @apply flex w-16 items-center justify-center;
+}
+
+#GitHubLink {
+  @apply flex h-12 w-12 items-center justify-center;
+}
+
+#GitHubLink:hover {
+  @apply rounded-full bg-slate-200;
+}
+
+.title {
+  @apply text-2xl;
+}
+
+.chat {
+  @apply h-full rounded-md bg-gradient-to-br from-emerald-100 to-emerald-200;
+
+  &-body {
+    @apply h-[calc(100%-4rem)] overflow-y-auto p-6;
+
+    &-content {
+      @apply w-[70%];
+    }
+  }
+
+  &-field {
+    @apply flex h-16 border-t-[1px] border-slate-400;
+
+    &-button {
+      @apply flex h-full w-16 items-center justify-center bg-white p-1;
+
+      &-addUser {
+        @apply rounded-bl-md;
+      }
+
+      &-sendMessage {
+        @apply rounded-br-md;
+      }
+
+      button {
+        @apply flex h-full w-full cursor-pointer items-center justify-center outline-none;
+      }
+
+      button:hover {
+        @apply rounded-full bg-slate-200;
+      }
+    }
+
+    input {
+      @apply h-full w-[calc(100%-8rem)] pl-3;
+    }
+  }
+}
+
+.msg {
+  @apply mt-3 w-fit rounded-r-2xl p-2 pb-1;
+
+  &-incoming {
+    @apply bg-white;
+  }
+
+  &-outgoing {
+    @apply bg-blue-200;
+  }
+
+  &-username {
+    @apply break-all font-semibold;
+  }
+
+  &-content {
+    @apply flex justify-between;
+
+    &-time {
+      @apply mt-3 self-end text-xs text-slate-400;
+    }
+
+    &-text {
+      @apply break-all pr-3;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  main {
+    @apply h-[calc(100%-4rem)];
+  }
+
+  .chat {
+    @apply rounded-none;
+
+    &-body {
+      &-content {
+        @apply w-[85%];
+      }
+    }
+
+    &-field {
+      input {
+        @apply rounded-none;
+      }
+
+      &-button {
+        &-sendMessage,
+        &-addUser {
+          @apply rounded-none;
+        }
+      }
+    }
+  }
+}
+
+@media (hover: none) {
+  button:hover {
+    background-color: transparent !important;
+  }
+}
